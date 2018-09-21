@@ -26,18 +26,15 @@ def compute_minimum_distance(points):
     Given a list of points, compute the distance between all pairs of points 
     and return the minimum of these distances.
     """
-    result = None
+    distances = []
     for i in range(len(points)):
         for j in range(len(points)):
             if i == j:
                 continue
             distance = compute_distance(points[i],
                                         points[j])
-            if result == None:
-                result = distance
-            elif distance < result:
-                result = distance
-    return result
+            distances.append(distance)
+    return min(distances)
                 
     
 point1 = (0,0)
