@@ -85,10 +85,19 @@ def gen_function(b = [0]):
         #print(a)
         
 # animation
-animation = matplotlib.animation.FuncAnimation(fig, update, interval = 10000, frames= gen_function(), repeat=False)
-matplotlib.pyplot.show()
+animation = matplotlib.animation.FuncAnimation(fig, update, interval = 1000, frames= gen_function(), repeat=False)
+fig.show()
 
 # Save animation
 
-animation.save('/Users/louisekelly/Desktop/python/Leeds/animation.gif', writer='writer', fps=60)
+# When trying to save this animation there were no libraries available, which
+# appears to be a known bug, particularly in ffpmeg and imagemagick. However, 
+# the below code should work when the bug is fixed.
+
+# Method one
+#animation.save('animation.mp4', fps=60)
+
+# Method two
+#animation.save('/Users/louisekelly/Desktop/python/Leeds/animation.gif', writer='ffmpeg', fps=60)
+
 
