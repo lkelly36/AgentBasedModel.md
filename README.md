@@ -1,5 +1,5 @@
 # Agent Based Model
-### A repository for the purpose of assessment for the module GEOM5995 - Programming for Social Scientists, taught at the University of Leeds.
+### A repository for the purpose of Assignment 1 for the module GEOM5995 - Programming for Social Scientists, taught at the University of Leeds.
 
 This respository contains the following files of importance:
 - agentbasedmodel folder:
