@@ -1,4 +1,9 @@
-# Imports
+"""
+Assignment 1 - GEOG5995 Programming for Social Scientists
+Final Model
+"""
+
+# Import required libraries
             
 import random
 import matplotlib.pyplot
@@ -6,7 +11,7 @@ import matplotlib.animation
 import agentframework
 import csv
 
-# Read the data
+# Read the data into the environment
 
 environment = []
 
@@ -18,13 +23,13 @@ for row in reader:
     for value in row:
         rowlist.append(value)
     environment.append(rowlist) 
-dataset.close() #close the file
+dataset.close() # Close the file
 
 # Set values
 num_of_agents = 50
 num_of_iterations = 100
-agents = []
 neighbourhood = 20
+agents = []
 
 # Make the agents using agentframework.py file.
 for i in range(num_of_agents):

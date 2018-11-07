@@ -1,25 +1,25 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Wed Nov  7 10:39:17 2018
+Assignment 1 - GEOG5995 Programming for Social Scientists
+Agent Class Framework
+"""
 
-@author: louisekelly
-"""
+# Import required library
 
 import random
 
-# Create Class
+# Create agent class.
+# All agents must move, eat and share resources with nearby neighbours.
 
 class Agent():
     def __init__(self, environment, agents, neighbourhood):
-        self._x=(random.randint(0,len(environment))) #make it start randomly, based on the length of the environment 
+        self._x=(random.randint(0,len(environment))) # random starting point based on environment
         self._y=(random.randint(0,len(environment)))
         self.environment = environment
         self.agents= agents
         self.neighbourhood=neighbourhood
         self.store = 0
     
-#make agents move
+#make agents move, using torus to return agents to the environment
     def move(self):
         if random.random() < 0.5:
             self._y = (self._y + 1) % 300
@@ -31,7 +31,7 @@ class Agent():
         else:
             self._x = (self._x - 1) % 300
           
-# make agents eat
+# make agents eat the environment
     def eat(self): 
         if  self.environment[self._y][self._x] > 10:
             self.environment[self._y][self._x] -= 10
@@ -45,10 +45,10 @@ class Agent():
         return (((agents_row_a._x - agents_row_b._x)**2) + 
         ((agents_row_a._y - agents_row_b._y)**2))**0.5
              
-# get agents to find how far away eachother are
+# share resources with nearby neighbours
     def share_with_neighbours(self, neighbourhood):
         for agent in self.agents:
-            #agents don't compare to themselves
+            # prevent agent from comparing to themselves
             if agent==self:
                 continue
             distance = self.distance_between(agent) 
