@@ -1,8 +1,8 @@
 # Agent Based Model
 ### A repository for the purpose of assessment for the module GEOM5995 - Programming for Social Scientists, taught at the University of 
-Leeds.
+### Leeds.
 
-This respository contains the following:
+This respository contains the following files of importance:
 - agentbasedmodel folder:
   - agentbasedmodel.py - the final model for the assignment.
   - agentframework.py - the class framework used in the model.
